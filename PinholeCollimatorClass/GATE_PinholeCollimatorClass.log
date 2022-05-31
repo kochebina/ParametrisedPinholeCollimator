@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.5.30)  31 MAY 2022 10:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.5.30)  31 MAY 2022 17:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -456,118 +456,130 @@ LaTeX Warning: No \author given.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<figs/scanner.png, id=55, 1047.915pt x 843.15pt>
+<figs/scanner.png, id=66, 1047.915pt x 843.15pt>
 File: figs/scanner.png Graphic file (type png)
 <use figs/scanner.png>
-Package pdftex.def Info: figs/scanner.png  used on input line 65.
+Package pdftex.def Info: figs/scanner.png  used on input line 68.
 (pdftex.def)             Requested size: 314.37692pt x 252.94695pt.
-<figs/colli.png, id=56, 1349.04pt x 843.15pt>
+<figs/colli.png, id=67, 1349.04pt x 843.15pt>
 File: figs/colli.png Graphic file (type png)
 <use figs/colli.png>
-Package pdftex.def Info: figs/colli.png  used on input line 72.
+Package pdftex.def Info: figs/colli.png  used on input line 75.
 (pdftex.def)             Requested size: 404.71512pt x 252.94695pt.
 
-Overfull \hbox (14.71512pt too wide) in paragraph at lines 72--73
+Overfull \hbox (14.71512pt too wide) in paragraph at lines 75--76
  [][] 
  []
 
 [2 <./figs/scanner.png>] [3 <./figs/colli.png>]
-<figs/rot_radius.png, id=70, 954.56625pt x 767.86874pt>
+<figs/rot_radius.png, id=80, 954.56625pt x 767.86874pt>
 File: figs/rot_radius.png Graphic file (type png)
 <use figs/rot_radius.png>
-Package pdftex.def Info: figs/rot_radius.png  used on input line 97.
+Package pdftex.def Info: figs/rot_radius.png  used on input line 100.
 (pdftex.def)             Requested size: 286.37209pt x 230.3624pt.
-<figs/pinhole.pdf, id=75, 438.67891pt x 353.40028pt>
+<figs/pinhole.pdf, id=85, 438.67891pt x 353.40028pt>
 File: figs/pinhole.pdf Graphic file (type pdf)
 <use figs/pinhole.pdf>
-Package pdftex.def Info: figs/pinhole.pdf  used on input line 138.
+Package pdftex.def Info: figs/pinhole.pdf  used on input line 141.
 (pdftex.def)             Requested size: 307.07314pt x 247.3785pt.
  [4 <./figs/rot_radius.png>]
-[5 <./figs/pinhole.pdf>]
-Overfull \hbox (1.77373pt too wide) in paragraph at lines 146--147
+[5] [6 <./figs/pinhole.pdf>]
+Overfull \hbox (1.77373pt too wide) in paragraph at lines 149--150
 \OT1/cmr/m/n/12 The re-sult of the fol-low-ing cal-cu-la-tions are im-ple-mente
 d in GateParametrised-
  []
 
-<figs/fig_def_size.pdf, id=97, 297.75241pt x 388.08992pt>
+<figs/fig_def_size.pdf, id=115, 297.75241pt x 388.08992pt>
 File: figs/fig_def_size.pdf Graphic file (type pdf)
 <use figs/fig_def_size.pdf>
-Package pdftex.def Info: figs/fig_def_size.pdf  used on input line 154.
+Package pdftex.def Info: figs/fig_def_size.pdf  used on input line 178.
 (pdftex.def)             Requested size: 297.75168pt x 388.08896pt.
-[6
+[7
 
-] [7 <./figs/fig_def_size.pdf>]
-<figs/fig_def_positions.pdf, id=132, 297.75241pt x 386.64452pt>
-File: figs/fig_def_positions.pdf Graphic file (type pdf)
-<use figs/fig_def_positions.pdf>
-Package pdftex.def Info: figs/fig_def_positions.pdf  used on input line 242.
-(pdftex.def)             Requested size: 297.75168pt x 386.64357pt.
- [8] [9 <./figs/fig_def_positions.pdf>]
-[10]
-<figs/HiSPECT4det.png, id=177, 775.89874pt x 1109.14375pt>
+] [8 <./figs/fig_def_size.pdf>] [9] [10]
+<figs/fig_def_positions.png, id=180, 667.49374pt x 698.61pt>
+File: figs/fig_def_positions.png Graphic file (type png)
+<use figs/fig_def_positions.png>
+Package pdftex.def Info: figs/fig_def_positions.png  used on input line 305.
+(pdftex.def)             Requested size: 333.74606pt x 349.30414pt.
+ [11 <./figs/fig_def_positions.png>]
+[12]
+<figs/HiSPECT4det.png, id=206, 775.89874pt x 1109.14375pt>
 File: figs/HiSPECT4det.png Graphic file (type png)
 <use figs/HiSPECT4det.png>
-Package pdftex.def Info: figs/HiSPECT4det.png  used on input line 297.
+Package pdftex.def Info: figs/HiSPECT4det.png  used on input line 360.
 (pdftex.def)             Requested size: 349.15121pt x 499.11008pt.
-<figs/HiSPECTaperture.png, id=178, 685.56125pt x 756.8275pt>
+<figs/HiSPECTaperture.png, id=207, 685.56125pt x 756.8275pt>
 File: figs/HiSPECTaperture.png Graphic file (type png)
 <use figs/HiSPECTaperture.png>
-Package pdftex.def Info: figs/HiSPECTaperture.png  used on input line 304.
+Package pdftex.def Info: figs/HiSPECTaperture.png  used on input line 367.
 (pdftex.def)             Requested size: 411.33992pt x 454.1pt.
 
-Overfull \hbox (21.33992pt too wide) in paragraph at lines 304--305
+Overfull \hbox (21.33992pt too wide) in paragraph at lines 367--368
  [][] 
  []
 
-<figs/HiSPECTpinhole.png, id=179, 734.745pt x 1329.96875pt>
+<figs/HiSPECTpinhole.png, id=208, 734.745pt x 1329.96875pt>
 File: figs/HiSPECTpinhole.png Graphic file (type png)
 <use figs/HiSPECTpinhole.png>
-Package pdftex.def Info: figs/HiSPECTpinhole.png  used on input line 312.
+Package pdftex.def Info: figs/HiSPECTpinhole.png  used on input line 375.
 (pdftex.def)             Requested size: 330.63219pt x 598.48042pt.
 
-LaTeX Warning: Float too large for page by 88.98041pt on input line 315.
+LaTeX Warning: Float too large for page by 103.48041pt on input line 378.
 
-[11
+[13
 
-] [12 <./figs/HiSPECT4det.png>] [13 <./figs/HiSPECTaperture.png>] [14 <./figs/H
+] [14 <./figs/HiSPECT4det.png>] [15 <./figs/HiSPECTaperture.png>] [16 <./figs/H
 iSPECTpinhole.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 326.
- [15
+<figs/hispect.png, id=236, 753.81625pt x 704.6325pt>
+File: figs/hispect.png Graphic file (type png)
+<use figs/hispect.png>
+Package pdftex.def Info: figs/hispect.png  used on input line 403.
+(pdftex.def)             Requested size: 339.21419pt x 317.0817pt.
+<figs/pin.png, id=237, 753.81625pt x 698.61pt>
+File: figs/pin.png Graphic file (type png)
+<use figs/pin.png>
+Package pdftex.def Info: figs/pin.png  used on input line 410.
+(pdftex.def)             Requested size: 339.21419pt x 314.3716pt.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 425.
+ [17
 
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 326.
- (./GATE_PinholeCollimatorClass.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 326.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 326.
+] [18 <./figs/hispect.png>] [19 <./figs/pin.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 425.
+
+(./GATE_PinholeCollimatorClass.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 425.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 425.
 Package rerunfilecheck Info: File `GATE_PinholeCollimatorClass.out' has not cha
 nged.
-(rerunfilecheck)             Checksum: 0F9BB4549D71235C7A6A1012E9016621;502.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 326.
+(rerunfilecheck)             Checksum: D9285EE2B2A705C5E0B145E2C27579C5;662.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 425.
  ) 
 Here is how much of TeX's memory you used:
- 8892 strings out of 483140
- 134270 string characters out of 5965151
- 397578 words of memory out of 5000000
- 23693 multiletter control sequences out of 15000+600000
- 543233 words of font info for 69 fonts, out of 8000000 for 9000
+ 8933 strings out of 483140
+ 134782 string characters out of 5965151
+ 397921 words of memory out of 5000000
+ 23710 multiletter control sequences out of 15000+600000
+ 543917 words of font info for 71 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 48i,8n,46p,534b,406s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12
-.pfb>
-Output written on GATE_PinholeCollimatorClass.pdf (15 pages, 1277871 bytes).
+ 48i,10n,46p,586b,408s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/kochebina/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200
+.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mtt12.pfb>
+Output written on GATE_PinholeCollimatorClass.pdf (19 pages, 1421668 bytes).
 PDF statistics:
- 262 PDF objects out of 1000 (max. 8388607)
- 209 compressed objects within 3 object streams
- 57 named destinations out of 1000 (max. 500000)
- 110 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 320 PDF objects out of 1000 (max. 8388607)
+ 258 compressed objects within 3 object streams
+ 78 named destinations out of 1000 (max. 500000)
+ 136 words of extra memory for PDF output out of 10000 (max. 10000000)
 

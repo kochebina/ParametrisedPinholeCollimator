@@ -13,14 +13,14 @@ void HiSPECTtoGate() {
 
   ///************ Part To Adapt***************///
   //Use your input file with .hispect extention 
-  string inputname="APT2.hispect";
+  string inputname="APT1.hispect";
   std::ifstream fin;
   fin.open(inputname);
   
   ///************ Part To Adapt***************///
   //Use your rotation radius as z 
-  float z =  45.f; //APT2
-  //float z =  30.f; //APT1
+  // float z =  45.f; //APT2
+  float z =  30.f; //APT1
 
   ///************ Part To Adapt***************///
   //Use your collimator thickness devided by 2 as h 
@@ -49,7 +49,7 @@ void HiSPECTtoGate() {
 
 	float apex;
 
-	fout<<"# y	z	dia	cone	focal point"<<endl;
+	fout<<"# x y dia  alpha_cone x_focal y_focal"<<endl;
 	fout<<temp_str<<endl;
 	fout<<n_pinholes<<endl;
 	

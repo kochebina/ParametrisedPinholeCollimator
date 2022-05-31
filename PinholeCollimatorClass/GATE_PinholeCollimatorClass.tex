@@ -18,7 +18,7 @@
 \definecolor{darkblue}{rgb}{0,0,0}
 \definecolor{darkgreen}{rgb}{0,0.5,0}
 \definecolor{darkviolet}{rgb}{0.55,0.,0.55}
-\hypersetup{colorlinks=true, linkcolor=darkblue, citecolor=darkviolet, urlcolor=darkgray}
+\hypersetup{colorlinks=true, linkcolor=darkblue, citecolor=darkviolet, urlcolor=blue}
 \usepackage{array}
 \usepackage{booktabs}
 %%%%%%%%%%%
@@ -57,8 +57,11 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Aim}
-This class was developed for simulations of a nanoSPECT/CT~(Fig.~\ref{fig:scanner}) by Mediso with a pinhole collimator~(Fig.~\ref{fig:colli}).
+\section{Introduction}
+The GateParametrisedPinholeCollimator class was developed for GATE simulations of a multiple pinhole collimator for preclinical SPECT imaging.
+In the simulation we use analytical model for the collimator geometry description.
+
+An example of preclinical SPECT with a multipinhole collimator is a nanoSPECT/CT by Mediso shown in Figure~\ref{fig:scanner} and macros can be found in \href{https://github.com/kochebina/ParametrisedPinholeCollimator/tree/main/macros}{macros on github}. It is a four head system with exchangeable collimators adapted to imagning subject. An example of pinhole collimator simulated with GATE is presented in Figure~\ref{fig:colli}.
  
 \begin{figure}[htp]
 \centering
@@ -76,7 +79,7 @@ This class was developed for simulations of a nanoSPECT/CT~(Fig.~\ref{fig:scanne
 
 
 \section{Options and input data}
-The geometry of pinhole is defined from a G4-pyramid with a subtracted cones in order to have pinholes.
+The geometry of pinhole is defined from a G4-pyramid with a subtracted cones (G4Cons) in order to have pinholes drilled from both sides of a collimator plane.
 
 The pyramid is defied with mac options:  
 \begin{verbatim}
@@ -87,7 +90,7 @@ The pyramid is defied with mac options:
 /gate/colli/geometry/setHeight 10 mm
 \end{verbatim}
 
-The collimator rotation radius, i.e. distance from the center of field of view to the pinholes center (see Fig.~\ref{fig:rot_radius} and Fig,~\ref{fig:pinhole}) is defined as:
+The collimator rotation radius, i.e. distance from the center of field of view to the pinholes center (see Figure~\ref{fig:rot_radius} and Figure~\ref{fig:pinhole}) is defined as:
 \begin{verbatim}
 /gate/colli/geometry/setRotRadius 45 mm
 \end{verbatim}
@@ -114,25 +117,25 @@ y	z	diameter cone_angle	focal_point_y focal_point_z
  \begin{table}[ht]
  \begin{center}
      \begin{tabular}{cccccc}
-      \#~~ y & z & dia & cone & focal & point \\
+      \#~~ x & y & dia & alpha cone & $x_{focal}$ & $y_{focal}$ \\
 	  {[APT2]} &  & &  &  &  \\
 	   9 &  & &  &  &  \\
-	   -28.5 & 12.0 & 2.5 & 6.3 & -18.5 & 0 \\
-		-3.5 & 12.0 & 2.5 & 6.3 & -3.5 & 0 \\
-		21.5 & 12.0 & 2.5 & 6.3 & 11.5 & 0 \\
-		-25.0 & 0 & 2.5 & 6.3 & -15 & 0 \\
-		0     & 0 & 2.5 & 6.3 & 0 & 0 \\
-		25.0  & 0 & 2.5 & 6.3 & 15 & 0 \\
-		-21.5 & -12.0 & 2.5 & 6.3 & -11.5 & 0 \\
-		3.5   & -12.0 & 2.5 & 6.3 & 3.5  & 0 \\
-		28.5 & -12.0 & 2.5 & 6.3 & 18.5 & 0 \\
+	   28.898 & 11.949 & 2.5 & 7.5 & 20.0002 & 0 \\
+		25.19 & 0 & 2.5 & 7.5 & 15.0274 & 0 \\
+		21.464 & -11.949 & 2.5 & 7.5 & 10.0315 & 0 \\
+		3.743 & 11.949 & 2.5 & 7.5 & 5.01876 & 0 \\
+		0     & 0 & 2.5 & 7.5 & 0 & 0 \\
+		-3.743 & -11.949 & 2.5 & 7.5 & -5.01876 & 0 \\
+		-21.464 & 11.949 & 2.5 & 7.5 & -10.0315 & 0 \\
+		-25.19 & 0 & 2.5 & 7.5 & -15.0274 & 0 \\
+		-28.898 & -11.949 & 2.5 & 7.5 & -20.0002 & 0 \\
      
      \end{tabular}
      \caption{Example of APT2.pin option file}
      \label{tab:ResTUBES}
   \end{center}
   \end{table}
-In Table~\ref{tab:ResTUBES} one can find a description of APT2 collimator with 9 holes. The diameter of pinholes (at the center) is 2.5~mm, the opening cone angle ($\alpha$ later) is 6.3~degree. The y and z coordinates are the centers of the pinholes. The focal coordinates are illustrated in Fig.~\ref{fig:pinhole}.
+In Table~\ref{tab:ResTUBES} one can find a description of a collimator called "APT2" with 9 holes. The diameter of pinholes (at the center) is 2.5~mm, the opening cone angle ($\alpha$) is 7.5~degree. The y and z coordinates are the centers of the pinholes. The focal coordinates are illustrated in Figure~\ref{fig:pinhole}.
 \begin{figure}[htp]
 \centering
 \includegraphics[scale=0.7]{figs/pinhole.pdf}
@@ -143,11 +146,32 @@ In Table~\ref{tab:ResTUBES} one can find a description of APT2 collimator with 9
 
 \clearpage
 \section{Pinhole geometry calculations}
-The result of the following calculations are implemented in GateParametrisedPinhole class.
+The result of the following calculations are implemented in GateParametrisedPinholeCollimator class.
 
-\subsection{Cone parameters}
-The names of the variables in the class are the same as in Figure~\ref{fig:fig_def_size}.
-The known parameters are: \textbf{\textit{d ( = dia)}} - diameter of the pinhole, $\mathbf{\alpha}$ = cone opening angle or apex/2, $\mathbf{\beta = 90^{\circ} - \alpha}$, h = half of a thickness of collimator plate.
+The names of the variables in the class are the same as in Figures~\ref{fig:fig_def_size} and ~\ref{fig:fig_def_positions} and the calculations below. The final results used in the GateParametrisedPinholeCollimator are framed.
+
+\
+
+The drilled cones of pinholes are simulated as G4Cons. The required and nontrivial parameters are: 
+\begin{itemize}
+\item Geometrical cone parameters
+	\begin{itemize}
+	\item height of the cone, \textit{Dz} 
+	\item radius of the cone basis, \textit{rmax}
+	\end{itemize}	
+\item Cone tilt 
+\item Displacement correction due to tilt
+	\begin{itemize}
+	\item  on \textit{x} (\textit{x} = the first column read from .pin file) : $x+\Delta x$ for "down cone" or $x-\Delta x$ for "upper cone"
+	\item on \textit{y} (\textit{y} = the second column read from .pin file): $y+\Delta y$ for "down cone" or $y-\Delta y$ for "upper cone"
+	\item on \textit{z} (\textit{z} = collimator rotation radius, Figure~\ref{fig:rot_radius}) : $-\Delta z$ for "down cone" or $\Delta z$ for "upper cone" 
+	\end{itemize}	
+\end{itemize}
+
+
+\subsection{Geometrical cone parameters}
+
+The known parameters are: \textbf{\textit{d ( = dia)}} -- diameter of the pinhole, $\mathbf{\alpha}$ = cone opening angle, \textit{x} and \textit{y} -- center of pinhole, $x_{focal}$ and $y_{focal}$ -- focal coordinates, \textit{z} = rotation radius, \textit{h} = half of a thickness of collimator plate.
 
 \begin{figure}[htp]
 \centering
@@ -156,9 +180,16 @@ The known parameters are: \textbf{\textit{d ( = dia)}} - diameter of the pinhole
 \label{fig:fig_def_size}
 \end{figure}
 \begin{enumerate}
-\item Calculation of $l$
-	$$\sin{\beta}=\frac{h}{l}$$
-	$$l=\frac{h}{\sin{\beta}}$$
+\item Calculation of $\beta$	
+	  \begin{equation} 	
+	\boxed{\beta=|\pi/2- atan(|x-x_{focal}/z|)|}
+	\end{equation}
+
+\item Calculation of $l$				
+	$$l=\frac{h}{\cos(\delta+\alpha)}=\frac{h}{\sin\beta}$$
+	  \begin{equation} 	
+	\boxed{l=\frac{h}{\sin\beta}}
+	\end{equation}
 \item Calculation of $k$ and $n$
 	$$\delta=90^{o}-(\alpha+\beta)$$
 
@@ -197,17 +228,13 @@ The known parameters are: \textbf{\textit{d ( = dia)}} - diameter of the pinhole
 %	\boxed{n_{central}=0	}
 %	\end{equation}	
 %	
-\item Calculation of $a$ from $k$ and $n$
+\item Calculation of $a$ from $k$
 	$$a=\frac{k}{\cos(\delta+\alpha)}=\frac{k}{\sin\beta}$$
 	  \begin{equation} 	
 	\boxed{a=\frac{k}{\sin\beta}}
 	\end{equation}
-\item 				
-	$$l=\frac{h}{\cos(\delta+\alpha)}=\frac{h}{\sin\beta}$$
-	  \begin{equation} 	
-	\boxed{l=\frac{h}{\sin\beta}}
-	\end{equation}
-\item Calculation of $b$ 
+
+\item Calculation of $s$ and $b$ 
 	$$\tan(\delta+\alpha)=\frac{1}{\tan{\beta}} =\frac{n+s}{k}$$
 	  \begin{equation} 	
 	\boxed{s=\frac{k}{\tan{\beta}}-n}
@@ -219,44 +246,80 @@ The known parameters are: \textbf{\textit{d ( = dia)}} - diameter of the pinhole
 	  \begin{equation} 	
 	\boxed{b=\frac{(d-s)\cdot(a+l)\cdot\cos\beta}{a}}
 	\end{equation}
-\item Calculation of $apex$ for a chosen direction ($x$ or $y$)
+\item Calculation of $Dz$ for a chosen direction ($x$ or $y$)
 \begin{equation} 
-	\boxed{apex=a+l+b}			
+	\boxed{Dz_x=a+l+b}			
+\end{equation}
+\begin{equation} 
+	\boxed{Dz_y=\frac{y-y_{focal}}{\cos{((y-y_{focal})/z)} }}			
 \end{equation}	
-\item In more general case: 
+\item In 3D: 
 \begin{equation} 
-	\boxed{apex=\sqrt{apex_{x}^{2}+apex_{y}^{2}}}			
+	\boxed{Dz=\sqrt{Dz_{x}^{2}+Dz_{y}^{2}}}		
 \end{equation}
 
-
+\item Cone radius: 
+\begin{equation} 
+	\boxed{rmax=Dz\cdot\tan{\alpha}}			
+\end{equation}
 	
 \end{enumerate}
 
+
+
+\subsection{Cone tilt}
+
+The tilt is defined with G4RotationMatrix by methods rotateX(\textit{rotX}) and rotateY(\textit{rotY}).
+
+\begin{enumerate}
+\item Definitions of t
+	\begin{equation} 
+	t=(x-x_{focal})^2+(y-y_{focal})^2+z^2		
+	\end{equation}
+\item Definitions of normal \textit{x}, \textit{y} and \textit{z}
+	\begin{equation} 
+	x_{normal}=(x-x_{focal})/\sqrt{t}		
+	\end{equation}
+	\begin{equation} 
+	y_{normal}=(y-y_{focal})/\sqrt{t}			
+	\end{equation}
+	\begin{equation} 
+	z_{normal}=z/\sqrt{t}		
+	\end{equation}
+
+\item Definitions of \textit{rotX} and \textit{rotY}
+	\begin{equation} 
+	\boxed{rotX=atan(x_{normal}/z_{normal})}	
+	\end{equation}
+	\begin{equation} 
+	\boxed{rotY=-atan(y_{normal}/z_{normal})}	
+	\end{equation}
+ \end{enumerate}
  
  
  
-\subsection{Cone positions}
+\subsection{Displacement correction due to tilt}
  
 \begin{figure}[htp]
 \centering
-\includegraphics[scale=1]{figs/fig_def_positions.pdf}
+\includegraphics[scale=0.5]{figs/fig_def_positions.png}
 \caption{Illustration for pinhole positions definitions}
 \label{fig:fig_def_positions}
 \end{figure}
-According to illustration Fig.~\ref{fig:fig_def_positions}: 
+According to illustration in Figure~\ref{fig:fig_def_positions} one obtains: 
 \begin{enumerate}
 \item Calculation of $\Delta z$
 	\begin{equation} 
 	\Delta z = k-k'		
 	\end{equation}
 	\begin{equation} 
-	\cos{(\delta+\alpha)} = \sin{\beta} = \frac{k'}{apex/2}	
+	\cos{(\delta+\alpha)} = \sin{\beta} = \frac{k'}{Dz/2}	
 	\end{equation}
 	\begin{equation} 
-	k' = (apex/2)\cdot\sin{\beta} 
+	k' = (Dz/2)\cdot\sin{\beta} 
 	\end{equation}
 	\begin{equation} 
-	\boxed{\Delta z = k - (apex/2)\cdot \sin{\beta} }		
+	\boxed{\Delta z = k - (Dz/2)\cdot \sin{\beta} }		
 	\end{equation}
 \item Calculation of $\Delta x$ or $\Delta y$ in 3D with $\phi$ as an azimuthal angle:
 	\begin{equation} 
@@ -272,7 +335,7 @@ According to illustration Fig.~\ref{fig:fig_def_positions}:
 One of tricky steps is to obtain the .pin file, i.e. pinhole parameters: positions, diameters, cone opening angles and focal points positions. 
 
 \subsection{Input from HiSPECT reconstruction software}
-Here one can find a description of how it was done for one of projects where the simulation of nanoSPECT/CT by Mediso. It is four head camera with several pinhole exchangeable collimators. In our case we were interested in APT1, a collimator for mouse imagning, and APT2, a collimator for rat imagning. 
+Here one can find a description of how it was done for one of projects where the simulation of nanoSPECT/CT by Mediso was done with GATE. It is four head camera with several pinhole exchangeable collimators. In our case we were interested in APT1, a collimator for mouse imagning, and APT2, a collimator for rat imagning. 
 
 The best way that we found was to search information in integrated reconstruction software of the scanner. In our case it was \textbf{HiSPECT}.
 The pinhole information was stored in (Figure~\ref{fig:HiSPECT4det})
@@ -289,7 +352,7 @@ and also given in Figure~\ref{fig:HiSPECTaperture}.
 
 The pinhole definitions are shown in Figure~\ref{fig:HiSPECTpinhole}. The most interesting parameters in our case are: yPosition, zPosition, Diameter, ApexAngle, phi and theta.
 
-However, in .pin file one should have focal points positions and not angles phi and theta and, thus, conversion should be done. This is done this way for historical reason: we have in-house reconstruction software where .pin files with the defined structure and parameters are used. In order to have the same parameterization files for simulation and reconstruction, we recalculate the focal position from phi and theta. It is done with a tool \texttt{HiSPECTtoGATE} described below.
+However, in .pin file one should have focal points positions and not angles phi and theta and, thus, conversion should be done. This conversion is necessary for historical reason: we have in-house reconstruction software developed much earlier than GATE simulations, where .pin files with the defined structure and parameters are used. In order to have the same parameterization files for simulation and reconstruction, we recalculate the focal position from phi and theta. It is done with a tool \texttt{HiSPECTtoGATE} described below.
 
 
 \begin{figure}[htp]
@@ -316,9 +379,42 @@ However, in .pin file one should have focal points positions and not angles phi 
 
 \clearpage
 \subsection{HiSPECTtoGate tool}
-This tool can be found on github: 
+This tool can be found on github: \href{https://github.com/kochebina/ParametrisedPinholeCollimator/tree/main/HiSPECTtoGATE}{HiSPECTtoGATE on github}. We decided to keep this script as simple as possible and not introduce the previous parameters as input options, thus, the script doesn't need a compilation. It is most probably will be used for inspiration.
 
-As input one should provide a text file obtained from HiSPECT (Figure~\ref{fig:HiSPECTpinhole}).
+It is important to notice that one should change some of lines of the script in order to adapt it for specific needs:
+\begin{itemize}
+\item line 16: give the name of your input file
+\item line 22: give the rotation radius
+\end{itemize}
+
+In order to run the script one can simple does: 
+The pyramid is defied with mac options:  
+\begin{verbatim}
+root -l HiSPECTtoGate.C
+\end{verbatim}
+
+\subsection{Input file}
+As input one should provide information from a text file obtained from HiSPECT (Figure~\ref{fig:HiSPECTpinhole}) ApertureName.hispect, for example APT1.hispect and APT2.hispect. These are text files produced "by hand". APT1.hispect and APT2.hispect are presented in Figure~\ref{fig:hispect}. 
+
+The output files, APT1\_hispect.pin and APT2\_hispect.pin (Figure~\ref{fig:pin}), can be used directly in GATE macros.
+
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.45]{figs/hispect.png}
+\caption{APT1.hispect and APT2.hispect}
+\label{fig:hispect}
+\end{figure}
+
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.45]{figs/pin.png}
+\caption{APT1\_hispect.pin and APT2\_hispect.pin produced by HiSPECTtoGate script and used in macros examples \href{https://github.com/kochebina/ParametrisedPinholeCollimator/tree/main/macros}{here}.}
+\label{fig:pin}
+\end{figure}
+ 
+
+
+
 
 
 %\bibliographystyle{plain}

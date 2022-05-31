@@ -1,4 +1,4 @@
-# y	z	dia	cone	focal point
+# x_center  y_center dia	cone  x_focal  y_focal 
 [APT1]
 9
 17.627 8.475 1.4 10 9.99965 0

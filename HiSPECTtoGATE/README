@@ -2,7 +2,6 @@
 Do not forget to adapt this simple script at lines 16, 22 and 27
 16: your input .hispect file
 22: your rotation radius
-27: thickness of your collimator
 
 We decided to keep this script as simple as possible and not introduce the previous parameters as input options, thus, the script doesn't need a compilation.
 And most probably will be used for inspiration.

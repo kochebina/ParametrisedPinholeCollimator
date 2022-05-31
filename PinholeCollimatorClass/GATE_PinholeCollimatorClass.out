@@ -1,8 +1,10 @@
-\BOOKMARK [1][-]{section.1}{Aim}{}% 1
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
 \BOOKMARK [1][-]{section.2}{Options and input data}{}% 2
 \BOOKMARK [1][-]{section.3}{Pinhole geometry calculations}{}% 3
-\BOOKMARK [2][-]{subsection.3.1}{Cone parameters}{section.3}% 4
-\BOOKMARK [2][-]{subsection.3.2}{Cone positions}{section.3}% 5
-\BOOKMARK [1][-]{section.4}{How to obtain .pin file}{}% 6
-\BOOKMARK [2][-]{subsection.4.1}{Input from HiSPECT reconstruction software}{section.4}% 7
-\BOOKMARK [2][-]{subsection.4.2}{HiSPECTtoGate tool}{section.4}% 8
+\BOOKMARK [2][-]{subsection.3.1}{Geometrical cone parameters}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{Cone tilt}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.3}{Displacement correction due to tilt}{section.3}% 6
+\BOOKMARK [1][-]{section.4}{How to obtain .pin file}{}% 7
+\BOOKMARK [2][-]{subsection.4.1}{Input from HiSPECT reconstruction software}{section.4}% 8
+\BOOKMARK [2][-]{subsection.4.2}{HiSPECTtoGate tool}{section.4}% 9
+\BOOKMARK [2][-]{subsection.4.3}{Input file}{section.4}% 10
