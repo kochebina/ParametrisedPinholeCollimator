@@ -1,0 +1,4 @@
+Gate mac/nanoSPECT_APT1_visu.mac --qt
+Gate mac/nanoSPECT_APT1_param_main.mac -a '[X,-3.20] [Y,-9.30] [Z,-1.40] [ANGLE,0]'
+Gate mac/nanoSPECT_APT2_visu.mac --qt
+Gate mac/nanoSPECT_APT2_param_main.mac -a '[X,-3.20] [Y,-9.30] [Z,-1.40] [ANGLE,0]'

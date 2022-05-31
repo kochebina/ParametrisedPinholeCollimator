@@ -1,0 +1,18 @@
+
+# Image output
+/gate/output/projection/enable
+/gate/output/projection/setFileName output/projection_visu
+
+/gate/output/projection/pixelSizeX 1 mm
+/gate/output/projection/pixelSizeY 1 mm
+/gate/output/projection/pixelNumberX 215
+/gate/output/projection/pixelNumberY 215
+/gate/output/projection/projectionPlane XY
+
+/gate/output/root/enable
+
+/gate/output/root/setFileName ./output/sensi_visu
+
+/gate/output/root/setRootHitFlag         1
+/gate/output/root/setRootSinglesFlag      1
+/gate/output/root/setRootNtupleFlag       0

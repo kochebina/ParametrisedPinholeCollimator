@@ -1,0 +1,49 @@
+
+/control/execute mac/visu_qt.mac
+#/control/execute mac/visu_beauty.mac
+
+# Verbose
+/control/execute mac/verbose.mac
+#/vis/disable
+
+# Geometry world
+/control/execute mac/world.mac
+
+# Geometry SPECT
+/control/execute mac/nanoSPECT_APT1_geometry.mac
+#/control/execute mac/nanoSPECT_geometry_avBC.mac
+
+########### Digitizer #########
+/control/execute mac/nanoSPECT_digitizer_In111.mac
+
+
+########### Phantom #########
+#/control/execute mac/phantom_source_sensi_noColl_0deg_In111.mac
+
+# Physics
+/control/execute mac/physics.mac
+
+
+# Output
+/control/execute     mac/output_visu.mac
+
+# Initialize
+/gate/run/initialize
+
+# Source
+/control/execute mac/source_visu.mac
+
+
+
+# Random
+/gate/random/setEngineName MersenneTwister
+/gate/random/setEngineSeed auto
+
+# Go
+/gate/application/setTimeStart 0 s
+/gate/application/setTimeSlice 1 s
+/gate/application/setTimeStop  1 s
+/gate/application/start
+
+#/vis/ASCIITree/verbose 16
+#/vis/drawTree

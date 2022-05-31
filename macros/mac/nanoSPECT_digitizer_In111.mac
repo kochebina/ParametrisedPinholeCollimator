@@ -1,0 +1,71 @@
+# GE Discovery 670
+# Digitizer for Indium-111
+# Primary window: 20% centered around 171 keV and 245 keV
+# Secondary window: 10% centered around 209 keV
+
+
+# Adder
+/gate/digitizer/Singles/insert adder
+
+# Intrinsic Spatial Blurring
+/gate/digitizer/Singles/insert spblurring
+/gate/digitizer/Singles/spblurring/setSpresolution 2.24 mm #fromHiSPECT
+/gate/digitizer/Singles/spblurring/verbose 0
+
+# Energy Blurring
+#/gate/digitizer/Singles/insert blurring
+#/gate/digitizer/Singles/blurring/setLaw linear
+#/gate/digitizer/Singles/blurring/linear/setResolution 0.10
+#/gate/digitizer/Singles/blurring/linear/setEnergyOfReference 245.0 keV
+#/gate/digitizer/Singles/blurring/linear/setSlope -0.00026 1/keV
+
+
+/gate/digitizer/Singles/insert blurring
+/gate/digitizer/Singles/blurring/setLaw inverseSquare
+/gate/digitizer/Singles/blurring/inverseSquare/setResolution 0.105
+/gate/digitizer/Singles/blurring/inverseSquare/setEnergyOfReference 245.0 keV
+
+
+# Thresholds In111
+/gate/digitizer/Singles/insert thresholder
+/gate/digitizer/Singles/thresholder/setThreshold 30. keV
+/gate/digitizer/Singles/insert upholder
+/gate/digitizer/Singles/upholder/setUphold 515. keV
+
+# Scatter Window
+/gate/digitizer/name scatter
+/gate/digitizer/insert singleChain
+/gate/digitizer/scatter/setInputName Singles
+/gate/digitizer/scatter/insert thresholder
+/gate/digitizer/scatter/thresholder/setThreshold 183.6 keV
+/gate/digitizer/scatter/insert upholder
+/gate/digitizer/scatter/upholder/setUphold 224.4 keV
+
+# In-111 : 171 keV windows, width of 20%
+/gate/digitizer/name peak171
+/gate/digitizer/insert singleChain
+/gate/digitizer/peak171/setInputName Singles
+/gate/digitizer/peak171/insert thresholder
+/gate/digitizer/peak171/thresholder/setThreshold 153.9 keV
+/gate/digitizer/peak171/insert upholder
+/gate/digitizer/peak171/upholder/setUphold 188.1 keV
+
+
+# In-111 : 245 keV windows, width of 20%
+/gate/digitizer/name peak245
+/gate/digitizer/insert singleChain
+/gate/digitizer/peak245/setInputName Singles
+/gate/digitizer/peak245/insert thresholder
+/gate/digitizer/peak245/thresholder/setThreshold 220.5 keV
+/gate/digitizer/peak245/insert upholder
+/gate/digitizer/peak245/upholder/setUphold 269.5 keV
+
+# In-111 : whole spectrum
+/gate/digitizer/name spectrum
+/gate/digitizer/insert singleChain
+/gate/digitizer/spectrum/setInputName Singles
+/gate/digitizer/spectrum/insert thresholder
+/gate/digitizer/spectrum/thresholder/setThreshold 50. keV
+/gate/digitizer/spectrum/insert upholder
+/gate/digitizer/spectrum/upholder/setUphold 365. keV
+

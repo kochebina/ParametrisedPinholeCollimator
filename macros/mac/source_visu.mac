@@ -1,0 +1,48 @@
+# PHANTOM
+# Create the phantom volume
+##
+#/gate/world/daughters/name Phantom
+#/gate/world/daughters/insert cylinder
+#/gate/Phantom/geometry/setRmax 14 mm
+#/gate/Phantom/geometry/setRmin 0. mm
+#/gate/Phantom/geometry/setHeight 14 mm
+#/gate/Phantom/placement/setTranslation  0.8 9.58905 -14 mm # 8.78905+0.8
+#/gate/Phantom/setMaterial Water
+#/gate/Phantom/vis/setColor blue
+#/gate/Phantom/vis/forceWireframe
+
+#/gate/Phantom/moves/insert translation
+#/gate/Phantom/translation/setSpeed 0.0 0.0 0.0 mm/s #3.51562
+
+
+# Source
+/gate/source/addSource Sensi_APT2 gps
+/gate/source/Sensi_APT2/gps/particle gamma
+/gate/source/Sensi_APT2/gps/type Volume
+/gate/source/Sensi_APT2/gps/shape Cylinder
+/gate/source/Sensi_APT2/gps/radius 18 mm
+/gate/source/Sensi_APT2/gps/halfz 18 mm
+/gate/source/Sensi_APT2/gps/angtype iso
+
+/gate/source/Sensi_APT2/gps/energytype UserSpectrum
+/gate/source/Sensi_APT2/gps/setSpectrumFile mac/energy_spectrum_In111.txt
+/gate/source/Sensi_APT2/setForcedHalfLife 242343 s
+# Activity -> 0.250344  * 1.8473 (0.9061+0.9412) =  0.462460  MBq
+/gate/source/Sensi_APT2/setActivity 1 Bq
+
+
+#/gate/source/Sensi_APT2/gps/centre {X} {Y} {Z} mm
+
+/gate/source/Sensi_APT2/gps/centre 17.91 -1.21 12.19 mm	 
+/gate/source/Sensi_APT2/gps/pos/rot1 0 0 1
+
+#/gate/source/Sensi_APT2/attachTo Phantom
+
+
+/gate/source/list
+
+
+
+
+
+

@@ -1,0 +1,29 @@
+# Source
+/gate/source/addSource Sensi_APT1 gps
+/gate/source/Sensi_APT1/gps/particle gamma
+/gate/source/Sensi_APT1/gps/type Volume
+/gate/source/Sensi_APT1/gps/shape Cylinder
+/gate/source/Sensi_APT1/gps/radius 1.8 mm
+/gate/source/Sensi_APT1/gps/halfz 1.8 mm
+/gate/source/Sensi_APT1/gps/angtype iso
+
+/gate/source/Sensi_APT1/gps/energytype UserSpectrum
+/gate/source/Sensi_APT1/gps/setSpectrumFile mac/energy_spectrum_In111.txt
+/gate/source/Sensi_APT1/setForcedHalfLife 242343 s
+# Activity -> 0.326127  * 1.8473 (0.9061+0.9412) =  0.602454  MBq
+/gate/source/Sensi_APT1/setActivity 0.602454 MBq
+
+
+/gate/source/Sensi_APT1/gps/centre {X} {Y} {Z} mm	 
+/gate/source/Sensi_APT1/gps/pos/rot1 0 0 1
+
+#/gate/source/Sensi_APT1/attachTo Phantom
+
+
+/gate/source/list
+
+
+
+
+
+
