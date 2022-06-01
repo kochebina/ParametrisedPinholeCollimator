@@ -103,7 +103,7 @@ The collimator rotation radius, i.e. distance from the center of field of view t
 \end{figure}
 
 
-The the pinhole geometry is defined with an option file:
+The pinholes are defined with an option file:
 \begin{verbatim}
 /gate/colli/geometry/input mac/APT2.pin
 \end{verbatim}
@@ -111,7 +111,7 @@ The the pinhole geometry is defined with an option file:
 The stricture of the option file, APT2.pin, is the following (an example could be found in Table~\ref{tab:ResTUBES}):
 \begin{verbatim}
 Number of pinholes
-y	z	diameter cone_angle	focal_point_y focal_point_z
+x	y	diameter cone_angle	x_focal y_focal
 \end{verbatim}
 
  \begin{table}[ht]
@@ -135,10 +135,10 @@ y	z	diameter cone_angle	focal_point_y focal_point_z
      \label{tab:ResTUBES}
   \end{center}
   \end{table}
-In Table~\ref{tab:ResTUBES} one can find a description of a collimator called "APT2" with 9 holes. The diameter of pinholes (at the center) is 2.5~mm, the opening cone angle ($\alpha$) is 7.5~degree. The y and z coordinates are the centers of the pinholes. The focal coordinates are illustrated in Figure~\ref{fig:pinhole}.
+In Table~\ref{tab:ResTUBES} one can find a description of a collimator called "APT2" with 9 holes. The diameter of pinholes (at the center) is 2.5~mm, the opening cone angle ($\alpha$) is 7.5~degree. The x and y coordinates are the centers of the pinholes. The focal coordinates are illustrated in Figure~\ref{fig:pinhole}.
 \begin{figure}[htp]
 \centering
-\includegraphics[scale=0.7]{figs/pinhole.pdf}
+\includegraphics[scale=0.4]{figs/pinhole_for_option_file.png}
 \caption{Illustration of parameters defined in APT2.pin option file}
 \label{fig:pinhole}
 \end{figure}
@@ -146,7 +146,7 @@ In Table~\ref{tab:ResTUBES} one can find a description of a collimator called "A
 
 \clearpage
 \section{Pinhole geometry calculations}
-The result of the following calculations are implemented in GateParametrisedPinholeCollimator class.
+The result of the following calculations is implemented in GateParametrisedPinholeCollimator class.
 
 The names of the variables in the class are the same as in Figures~\ref{fig:fig_def_size} and ~\ref{fig:fig_def_positions} and the calculations below. The final results used in the GateParametrisedPinholeCollimator are framed.
 
@@ -272,7 +272,7 @@ The known parameters are: \textbf{\textit{d ( = dia)}} -- diameter of the pinhol
 The tilt is defined with G4RotationMatrix by methods rotateX(\textit{rotX}) and rotateY(\textit{rotY}).
 
 \begin{enumerate}
-\item Definitions of t
+\item Definition of t
 	\begin{equation} 
 	t=(x-x_{focal})^2+(y-y_{focal})^2+z^2		
 	\end{equation}
@@ -387,8 +387,7 @@ It is important to notice that one should change some of lines of the script in 
 \item line 22: give the rotation radius
 \end{itemize}
 
-In order to run the script one can simple does: 
-The pyramid is defied with mac options:  
+In order to run the script one can simple does:   
 \begin{verbatim}
 root -l HiSPECTtoGate.C
 \end{verbatim}
